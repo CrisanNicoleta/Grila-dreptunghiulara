@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+  padding: 10px;
+  width: 650px;
+  height: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+
+.grid-container > div {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+#item1 {
+  grid-column: 1 / span 1;
+  background-color:  #2196F3;
+}
+
+#item2 {
+  background-color: #2196F3;
+}
+
+#item3 {
+  background-color: #2196F3;
+}
+
+#item4 {
+  background-color: #2196F3;
+}
+
+#item5 {
+   background-color:#2196F3;
+}
+
+#item6 {
+  background-color: #2196F3;
+}
+
+#item7 {
+  background-color: #2196F3;
+}
+
+#item8 {
+  background-color: #2196F3;
+}
+
+#item9 {
+  background-color: #2196F3;
+}
+
+#item10 {
+  background-color: #2196F3;
+}
+
+#item11 {
+  background-color: #2196F3;
+}
+
+#item12 {
+  background-color: #2196F3;
+}
+
+#item13 {
+  background-color: #2196F3;
+}
+
+#item14 {
+  background-color: #2196F3;
+}
+
+#item15 {
+  background-color: #2196F3;
+}
+
+#stopwatch {
+    font-size: 60px;
+    position: absolute;
+    top: 15%;
+    left: 1%;
+}
+#buttons {
+    position: absolute;
+    top: 10%;
+    left: 1%;
+   
+}
+#buttons li {
+    display: inline;
+    padding-left: 10px;
+}
+</style>
+</head>
+
+<body>
+<div id="stopwatch">
+            00:00:00
+        </div>
+
+        <ul id="buttons">
+            <li><button onclick="startTimer()">Start</button></li>
+            <li><button onclick="stopTimer()">Stop</button></li>
+
+            <li><button onclick="resetTimer()">Reset</button></li>
+        </ul>
+<div class="grid-container">
+  <div id="item1"
+   onmouseover="mouseOver()">
+   </div>
+  <div id="item2"
+   onmouseover="mouseOver2()">
+   </div>
+  <div id="item3"
+   onmouseover="mouseOver3()">
+   </div>
+  <div id="item4"
+   onmouseover="mouseOver4()">
+   </div>
+  <div id="item5"
+   onmouseover="mouseOver5()">
+   </div>
+  <div id="item6"
+   onmouseover="mouseOver6()">
+   </div>
+  <div id="item7"
+   onmouseover="mouseOver7()">
+   </div>
+  <div id="item8"
+   onmouseover="mouseOver8()">
+   </div>
+  <div id="item9"
+   onmouseover="mouseOver9()">
+   </div>
+  <div id="item10"
+   onmouseover="mouseOver10()">
+   </div>
+  <div id="item11"
+   onmouseover="mouseOver11()">
+   </div>
+  <div id="item12"
+   onmouseover="mouseOver12()">
+   </div>
+  <div id="item13"
+   onmouseover="mouseOver13()">
+   </div>  
+  <div id="item14"
+   onmouseover="mouseOver14()">
+   </div>
+  <div id="item15"
+   onmouseover="mouseOver15()">
+   </div>
+<script>
+  
+    function mouseOver(){
+	document.getElementById("item1").style.background= "#ffffcc";
+                         }
+    function mouseOver2(){
+        document.getElementById("item2").style.background="#ffffcc";
+                         }
+    function mouseOver3(){
+        document.getElementById("item3").style.background="#ffffcc";
+                         }
+    function mouseOver4(){
+        document.getElementById("item4").style.background="#ffffcc";
+                         }
+    function mouseOver5(){
+        document.getElementById("item5").style.background="#ffffcc";
+                         }
+    function mouseOver6(){
+        document.getElementById("item6").style.background="#ffffcc";
+                         }
+     function mouseOver7(){
+        document.getElementById("item7").style.background="#ffffcc";
+                         }
+     function mouseOver8(){
+        document.getElementById("item8").style.background="#ffffcc";
+                         }
+     function mouseOver9(){
+        document.getElementById("item9").style.background="#ffffcc";
+                         }
+     function mouseOver10(){
+        document.getElementById("item10").style.background="#ffffcc";
+                         }
+
+   function mouseOver11(){
+        document.getElementById("item11").style.background="#ffffcc";
+                         }
+     function mouseOver12(){
+        document.getElementById("item12").style.background="#ffffcc";
+                         }
+     function mouseOver13(){
+        document.getElementById("item13").style.background="#ffffcc";
+                           }
+     function mouseOver14(){
+        document.getElementById("item14").style.background="#ffffcc";            
+                          }
+     function mouseOver15(){
+        document.getElementById("item15").style.background="#ffffcc";
+}
+    const timer = document.getElementById('stopwatch');
+
+var hr = 0;
+var min = 0;
+var sec = 0;
+var stoptime = true;
+
+function startTimer() {
+  if (stoptime == true) {
+        stoptime = false;
+        timerCycle();
+    }
+}
+function stopTimer() {
+  if (stoptime == false) {
+    stoptime = true;
+  }
+      setTimeout(()=> {
+    alert('S-au colorat toate celulele in '+sec +' secunde' );
+}, 2000);
+}
+function timerCycle() {
+    if (stoptime == false) {
+    sec = parseInt(sec);
+    min = parseInt(min);
+    hr = parseInt(hr);
+
+    sec = sec + 1;
+
+    if (sec == 60) {
+      min = min + 1;
+      sec = 0;
+    }
+    if (min == 60) {
+      hr = hr + 1;
+      min = 0;
+      sec = 0;
+    }
+if (sec < 10 || sec == 0) {
+      sec = '0' + sec;
+    }
+    if (min < 10 || min == 0) {
+      min = '0' + min;
+    }
+    if (hr < 10 || hr == 0) {
+      hr = '0' + hr;
+    }
+
+    timer.innerHTML = hr + ':' + min + ':' + sec;
+
+    setTimeout("timerCycle()", 1000);
+  }
+}
+
+function resetTimer() {
+    timer.innerHTML = '00:00:00';
+}
+
+</script>
+</div>
+</body>
+</html>

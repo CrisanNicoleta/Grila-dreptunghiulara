@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+  padding: 10px;
+  width: 650px;
+  height: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+
+.grid-container > div {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+#item1 {
+  grid-column: 1 / span 1;
+  background-color: #ffb3b3;
+}
+
+#item2 {
+  background-color: #2196F3;
+}
+
+#item3 {
+  background-color: #2196F3;
+}
+
+#item4 {
+  background-color: #2196F3;
+}
+
+#item5 {
+   background-color:#2196F3;
+}
+
+#item6 {
+  background-color: #2196F3;
+}
+
+#item7 {
+  background-color: #2196F3;
+}
+
+#item8 {
+  background-color: #2196F3;
+}
+
+#item9 {
+  background-color: #2196F3;
+}
+
+#item10 {
+  background-color: #2196F3;
+}
+
+#item11 {
+  background-color: #2196F3;
+}
+
+#item12 {
+  background-color: #2196F3;
+}
+
+#item13 {
+  background-color: #2196F3;
+}
+
+#item14 {
+  background-color: #2196F3;
+}
+
+#item15 {
+  background-color: #2196F3;
+}
+
+</style>
+</head>
+
+<body>
+<div class="grid-container">
+  <div id="item1"></div>
+  <div id="item2"></div>
+  <div id="item3"></div>  
+  <div id="item4"></div>
+  <div id="item5"></div>
+  <div id="item6"></div>
+  <div id="item7"></div>
+  <div id="item8"></div>
+  <div id="item9"></div>
+  <div id="item10"></div>  
+  <div id="item11"></div>
+  <div id="item12"></div>
+  <div id="item13"></div>  
+  <div id="item14"></div>
+  <div id="item15"></div>
+</div>
+
+<script>
+
+	document.onkeydown = keyProcess;
+
+	var increment = 10;
+	
+	function keyProcess(evt) {
+		var this_key = (evt) ? evt.which : window.event.keyCode;
+
+		var layer = document.getElementById("item1");
+		
+
+		if(this_key==37){
+                  document.getElementById("item1").style.background= "#ffb3b3";
+                  document.getElementById("item2").style.background= "#2196F3";
+			
+		}
+		
+		if(this_key==38){
+                  document.getElementById("item1").style.background= "#ffb3b3";
+                  document.getElementById("item6").style.background= "#2196F3";
+			
+		}
+	
+		if(this_key==39){
+			document.getElementById("item2").style.background= "#ffb3b3";
+                        document.getElementById("item1").style.background= "#2196F3";
+                       
+		}
+
+		if(this_key==40){
+			document.getElementById("item6").style.background= "#ffb3b3";
+                        document.getElementById("item1").style.background= "#2196F3";
+		}
+
+	}
+
+
+</script>
+
+</body>
+</html>
